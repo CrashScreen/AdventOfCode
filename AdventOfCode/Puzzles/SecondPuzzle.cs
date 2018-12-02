@@ -22,7 +22,7 @@ namespace AdventOfCode.Puzzles
             return "First answer: " + CalculateFirstAnswer() + "\nSecond answer is: " + CalculateSecondAnswer();
         }
 
-        public string CalculateFirstAnswer()
+        private string CalculateFirstAnswer()
         {
             Dictionary<char, int> duplicateChar = new Dictionary<char, int>();
 
@@ -49,7 +49,7 @@ namespace AdventOfCode.Puzzles
             return (doubleCount * trebleCount).ToString();
         }
 
-        public string CalculateSecondAnswer()
+        private string CalculateSecondAnswer()
         {
             foreach(string ID in parsedIDs)
             {

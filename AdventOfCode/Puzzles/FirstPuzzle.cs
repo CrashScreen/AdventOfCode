@@ -27,7 +27,7 @@ namespace AdventOfCode.Puzzles
             return "Puzzle 1: " + CalculateAnswer1().ToString() + "\nPuzzle 2: " + CalculateAnswer2().ToString();// repeatedValue.ToString();
         }
 
-        public int CalculateAnswer1()
+        private int CalculateAnswer1()
         {
             List<int> calculatedFrequencies = new List<int>();
             foreach (int frequencyChange in parsedPuzzleFile)
@@ -37,7 +37,7 @@ namespace AdventOfCode.Puzzles
             return value;
         }
 
-        public int CalculateAnswer2()
+        private int CalculateAnswer2()
         {
             List<int> calculatedFrequencies = new List<int>();
             bool isRepeatValue = false;
