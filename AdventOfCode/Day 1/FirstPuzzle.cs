@@ -10,23 +10,54 @@ namespace AdventOfCode.Day_1
     class FirstPuzzle
     {
         private int value;
+        private int repeatedValue;
+        FileParser parser = new FileParser();
+        string filePath = (@"E:\Projects\AdventOfCode\AdventOfCode\Day 1\puzzle1.txt");
+        List<int> parsedPuzzleFile = new List<int>();
 
         public FirstPuzzle()
         {
-            FileParser parser = new FileParser();
-            List<int> parsedPuzzleFile = new List<int>();
-            string filePath = (@"E:\Projects\AdventOfCode\AdventOfCode\Day 1\puzzle1.txt");
             parsedPuzzleFile = parser.ObtainIntList(filePath);
-            
-            foreach(int frequency in parsedPuzzleFile)
-            {
-                value += frequency;
-            }
         }
 
         public string Answer()
         {
-            return value.ToString();
+            return "Puzzle 1: " + CalculateAnswer1().ToString() + "\nPuzzle 2: " + CalculateAnswer2().ToString();// repeatedValue.ToString();
+        }
+
+        public int CalculateAnswer1()
+        {
+            List<int> calculatedFrequencies = new List<int>();
+            foreach (int frequencyChange in parsedPuzzleFile)
+            {
+                value += frequencyChange;
+            }
+
+            return value;
+        }
+
+        public int CalculateAnswer2()
+        {
+            List<int> calculatedFrequencies = new List<int>();
+
+            bool isRepeatValue = false;
+
+            while (!isRepeatValue)
+            {
+                foreach (int frequencyChange in parsedPuzzleFile)
+                {
+                    repeatedValue += frequencyChange;
+
+                    if (calculatedFrequencies.Contains(repeatedValue))
+                    {
+                        isRepeatValue = true;
+                        return repeatedValue;
+                    }
+                    else
+                        calculatedFrequencies.Add(repeatedValue);
+                }
+            }
+            return 0;
         }
 
     }
