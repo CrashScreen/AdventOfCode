@@ -43,10 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Day 1\FirstPuzzle.cs" />
+    <Compile Include="Puzzles\FirstPuzzle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FileParser.cs" />
+    <Compile Include="Puzzles\SecondPuzzle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

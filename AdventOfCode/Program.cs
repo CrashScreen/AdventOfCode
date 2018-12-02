@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AdventOfCode.Puzzles;
 
 namespace AdventOfCode
 {
@@ -10,8 +11,9 @@ namespace AdventOfCode
     {
         static void Main(string[] args)
         {
-            Day_1.FirstPuzzle firstPuzzle = new Day_1.FirstPuzzle();
-            System.Console.WriteLine(firstPuzzle.Answer());
+            FirstPuzzle firstPuzzle = new FirstPuzzle();
+            SecondPuzzle secondPuzzle = new SecondPuzzle();
+            System.Console.WriteLine(secondPuzzle.Answer());
             System.Console.ReadKey();
         }
     }

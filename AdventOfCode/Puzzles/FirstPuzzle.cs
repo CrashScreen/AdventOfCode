@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace AdventOfCode.Day_1
+namespace AdventOfCode.Puzzles
 {
     class FirstPuzzle
     {
         FileParser parser = new FileParser();
-        string filePath = (@"E:\Projects\AdventOfCode\AdventOfCode\Day 1\puzzle1.txt");
+        string filePath = (@"E:\Projects\AdventOfCode\AdventOfCode\Puzzles\puzzle1.txt");
 
         List<int> parsedPuzzleFile = new List<int>();
 
