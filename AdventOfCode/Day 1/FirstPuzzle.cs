@@ -9,11 +9,13 @@ namespace AdventOfCode.Day_1
 {
     class FirstPuzzle
     {
-        private int value;
-        private int repeatedValue;
         FileParser parser = new FileParser();
         string filePath = (@"E:\Projects\AdventOfCode\AdventOfCode\Day 1\puzzle1.txt");
+
         List<int> parsedPuzzleFile = new List<int>();
+
+        private int value;
+        private int repeatedValue;
 
         public FirstPuzzle()
         {
@@ -32,14 +34,12 @@ namespace AdventOfCode.Day_1
             {
                 value += frequencyChange;
             }
-
             return value;
         }
 
         public int CalculateAnswer2()
         {
             List<int> calculatedFrequencies = new List<int>();
-
             bool isRepeatValue = false;
 
             while (!isRepeatValue)
@@ -47,7 +47,6 @@ namespace AdventOfCode.Day_1
                 foreach (int frequencyChange in parsedPuzzleFile)
                 {
                     repeatedValue += frequencyChange;
-
                     if (calculatedFrequencies.Contains(repeatedValue))
                     {
                         isRepeatValue = true;
