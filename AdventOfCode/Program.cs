@@ -13,7 +13,8 @@ namespace AdventOfCode
         {
             FirstPuzzle firstPuzzle = new FirstPuzzle();
             SecondPuzzle secondPuzzle = new SecondPuzzle();
-            System.Console.WriteLine(secondPuzzle.Answer());
+            ThirdPuzzle thirdPuzzle = new ThirdPuzzle();
+            System.Console.WriteLine(thirdPuzzle.Answer());
             System.Console.ReadKey();
         }
     }

@@ -37,5 +37,25 @@ namespace AdventOfCode
             }
             return stringParse;
         }
+
+        public List<Rectangle> ObtainRectangleList(string filename)
+        {
+            List<Rectangle> rectangleParse = new List<Rectangle>();
+            char[] delimiters = { '@', ',', ':', 'x' };
+
+            using (StreamReader reader = new StreamReader(filename))
+            {
+                while (!reader.EndOfStream)
+                {
+                    string[] readLine;
+                    //initialParse.Add(reader.ReadLine());
+                    readLine = reader.ReadLine().Split(delimiters);
+
+                    Rectangle rectangle = new Rectangle(Convert.ToInt32(readLine[0].Substring(1)), Convert.ToInt32(readLine[1]), Convert.ToInt32(readLine[2]), Convert.ToInt32(readLine[3]), Convert.ToInt32(readLine[4]));
+                    rectangleParse.Add(rectangle);
+                }
+            }
+            return rectangleParse;
+        }
     }
 }
