@@ -20,13 +20,11 @@ namespace AdventOfCode.Puzzles
 
         public string Answer()
         {
-            return "Answer 1: " + FirstAnswer();
+            return "Answer 1: " + FirstAnswer() + "\nAnswer 2: " + SecondAnswer();
         }
 
         private string FirstAnswer()
         {
-            List<Rectangle> overlappingList = new List<Rectangle>();
-            List<string> overlappingTiles = new List<string>();
             int[,] map = new int[rectangleList.Max(r => r.XRight), rectangleList.Max(r => r.YBottom)];
 
             foreach (Rectangle rectangle in rectangleList)
@@ -40,6 +38,29 @@ namespace AdventOfCode.Puzzles
                 }
             }
             return map.Cast<int>().Where(x => x >= 2).Count().ToString();
+        }
+
+        private string SecondAnswer()
+        {
+            List<Rectangle> nonOverLapping = new List<Rectangle>();
+            int[,] map = new int[rectangleList.Max(r => r.XRight), rectangleList.Max(r => r.YBottom)];
+
+            foreach (Rectangle rectangle in rectangleList)
+            {
+                foreach (Rectangle rectangleB in rectangleList)
+                {
+                    if(rectangle.id != rectangleB.id && rectangle.isIntersecting(rectangleB))
+                    {
+                        rectangle.isOverlapping = true;
+                    }
+                }
+                if (!rectangle.isOverlapping)
+                    nonOverLapping.Add(rectangle);
+            }
+            if (nonOverLapping.Count() == 1)
+                return nonOverLapping[0].id.ToString();
+            else
+                return string.Empty;
         }
     }
 }

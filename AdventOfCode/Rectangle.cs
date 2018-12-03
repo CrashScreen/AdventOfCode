@@ -13,14 +13,7 @@ namespace AdventOfCode
         public int y;
         public int height;
         public int width;
-
-        public int Area
-        {
-            get
-            {
-                return (height * width);
-            }
-        }
+        public bool isOverlapping;
 
         public int XRight
         {
