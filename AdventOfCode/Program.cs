@@ -11,10 +11,8 @@ namespace AdventOfCode
     {
         static void Main(string[] args)
         {
-            FirstPuzzle firstPuzzle = new FirstPuzzle();
-            SecondPuzzle secondPuzzle = new SecondPuzzle();
-            ThirdPuzzle thirdPuzzle = new ThirdPuzzle();
-            System.Console.WriteLine(thirdPuzzle.Answer());
+            iPuzzle puzzle = new FourthPuzzle();
+            System.Console.WriteLine(puzzle.Answer());
             System.Console.ReadKey();
         }
     }

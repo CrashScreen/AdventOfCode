@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode.Puzzles
 {
-    public class SecondPuzzle
+    public class SecondPuzzle : iPuzzle
     {
         FileParser parser = new FileParser();
         List<string> parsedIDs = new List<string>();

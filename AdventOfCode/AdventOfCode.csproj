@@ -43,10 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Guards.cs" />
+    <Compile Include="iPuzzle.cs" />
     <Compile Include="Puzzles\FirstPuzzle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FileParser.cs" />
+    <Compile Include="Puzzles\FourthPuzzle.cs" />
     <Compile Include="Puzzles\SecondPuzzle.cs" />
     <Compile Include="Puzzles\ThirdPuzzle.cs" />
     <Compile Include="Rectangle.cs" />

@@ -57,5 +57,23 @@ namespace AdventOfCode
             }
             return rectangleParse;
         }
+
+        public Dictionary<DateTime, string> ObtainSleepingPattern(string filename)
+        {
+            Dictionary<DateTime, string> guardLog = new Dictionary<DateTime, string>();
+
+            using (StreamReader reader = new StreamReader(filename))
+            {
+                string[] currentLine;
+                while(!reader.EndOfStream)
+                {
+                    char[] delimiters = { '[', ']' };
+                    currentLine = reader.ReadLine().Split(delimiters);
+                    guardLog.Add(Convert.ToDateTime(currentLine[1]), currentLine[2]);
+                }
+            }
+
+            return guardLog.OrderBy(x => x.Key).ToDictionary(log => log.Key, log => log.Value);
+        }
     }
 }

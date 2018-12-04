@@ -7,7 +7,7 @@ using System.IO;
 
 namespace AdventOfCode.Puzzles
 {
-    class FirstPuzzle
+    class FirstPuzzle : iPuzzle
     {
         FileParser parser = new FileParser();
         string filePath = (@"E:\Projects\AdventOfCode\AdventOfCode\Puzzles\puzzle1.txt");
@@ -58,6 +58,5 @@ namespace AdventOfCode.Puzzles
             }
             return 0;
         }
-
     }
 }

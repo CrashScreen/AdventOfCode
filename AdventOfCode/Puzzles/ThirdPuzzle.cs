@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode.Puzzles
 {
-    public class ThirdPuzzle
+    public class ThirdPuzzle : iPuzzle
     {
         FileParser parser = new FileParser();
         string filePath = @"E:\Projects\AdventOfCode\AdventOfCode\Puzzles\puzzle3.txt";
@@ -26,7 +26,6 @@ namespace AdventOfCode.Puzzles
         private string FirstAnswer()
         {
             int[,] map = new int[rectangleList.Max(r => r.XRight), rectangleList.Max(r => r.YBottom)];
-
             foreach (Rectangle rectangle in rectangleList)
             {
                 for (int yindex = rectangle.y; yindex < rectangle.YBottom; yindex++)
@@ -43,16 +42,12 @@ namespace AdventOfCode.Puzzles
         private string SecondAnswer()
         {
             List<Rectangle> nonOverLapping = new List<Rectangle>();
-            int[,] map = new int[rectangleList.Max(r => r.XRight), rectangleList.Max(r => r.YBottom)];
-
             foreach (Rectangle rectangle in rectangleList)
             {
                 foreach (Rectangle rectangleB in rectangleList)
                 {
                     if(rectangle.id != rectangleB.id && rectangle.isIntersecting(rectangleB))
-                    {
                         rectangle.isOverlapping = true;
-                    }
                 }
                 if (!rectangle.isOverlapping)
                     nonOverLapping.Add(rectangle);
