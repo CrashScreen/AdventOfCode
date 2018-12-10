@@ -75,5 +75,29 @@ namespace AdventOfCode
 
             return guardLog.OrderBy(x => x.Key).ToDictionary(log => log.Key, log => log.Value);
         }
+
+        public string ObtainString(string filename)
+        {
+            string fileString = File.ReadAllText(filename);
+            return fileString;
+        }
+
+        public Dictionary<int, Coordinate> ObtainListOfCoordinates(string filename)
+        {
+            Dictionary<int, Coordinate> coordinates = new Dictionary<int,Coordinate>();
+
+            using (StreamReader reader = new StreamReader(filename))
+            {
+                int i = 0;
+                while(!reader.EndOfStream)
+                {
+                    string[] line = reader.ReadLine().Split(',');
+                    coordinates.Add(i, new Coordinate(Convert.ToInt32(line[0]), Convert.ToInt32(line[1])));
+                    i++;
+                }
+            }
+
+            return coordinates;
+        }
     }
 }
